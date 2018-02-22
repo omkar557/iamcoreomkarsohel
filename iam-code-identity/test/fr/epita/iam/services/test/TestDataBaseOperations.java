@@ -20,18 +20,18 @@ public class TestDataBaseOperations {
 	        IdentityUpdationException, IdentityListException{
 		
 		IdentityJDBCDAO idJDBC = new IdentityJDBCDAO();
-		Identity identity = new Identity("Sohel", "SohelPathan@gmail.com","333");	
+		Identity identity = new Identity("Sohel", "SohelPathan@gmail.com","100");	
 		
 		System.out.println("Identity Creation Test:");
 		idJDBC.identity_create(identity);
-		System.out.println("Identity has been created successfully!");
+		
 		List<Identity> identities_c = idJDBC.identity_list(identity);
 		System.out.println(identities_c);
 		
 		System.out.println("Identity Updation Test:");
 		identity.setDisplayName("Omkar_Yadav");
 		idJDBC.identity_update(identity);
-		System.out.println("Identity has been updated successfully!");
+		
 		List<Identity> identities_u = idJDBC.identity_list(identity);
 		System.out.println(identities_u);
 		
@@ -40,7 +40,7 @@ public class TestDataBaseOperations {
 		identity.setEmail(null);
 		identity.setUid("333");
 		idJDBC.identity_delete(identity);
-		System.out.println("Identity has been deleted successfully!");
+		
 		List<Identity> identities_d = idJDBC.identity_list(identity);
 		System.out.println(identities_d);	
 		
